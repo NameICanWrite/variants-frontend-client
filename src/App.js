@@ -41,9 +41,9 @@ function App() {
     dispatch(fetchInbox())
   }, [dispatch])
 
-  useEffect(() => {
-    dispatch(fetchLog())
-  }, [dispatch])
+  // useEffect(() => {
+  //   dispatch(fetchLog())
+  // }, [dispatch])
 
   //remove spellcheck
   useEffect(() => document.querySelectorAll('textarea').forEach((textarea) => textarea.spellcheck = false))
