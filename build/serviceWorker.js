@@ -19,4 +19,4 @@ self.addEventListener("push", e => {
   self.addEventListener('notificationclick', function(event) {  
     console.log('notification click')
     }  
-  });
+  );
