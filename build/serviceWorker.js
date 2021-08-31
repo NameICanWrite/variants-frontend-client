@@ -1,4 +1,4 @@
-import axios from 'axios'
+
 
 
 console.log('startting worker')
