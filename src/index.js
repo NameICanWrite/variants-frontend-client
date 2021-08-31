@@ -22,7 +22,7 @@ ReactDOM.render(
 // or send to an analytics endpoint. Learn more: https://bit.ly/CRA-vitals
 reportWebVitals();
 let serverPath
-// if (process.env.NODE_ENV === 'development') {serverPath = 'http://localhost:5000'}
-// else {serverPath = 'https://myfirstbackend1.herokuapp.com'}
+if (process.env.NODE_ENV === 'development') {serverPath = 'http://localhost:5000'}
+else {serverPath = 'https://myfirstbackend1.herokuapp.com'}
 
 export default serverPath
