@@ -15,6 +15,7 @@ export const fetchLog = createAsyncThunk('log/fetchLog', async () => {
 })
 
 export const postLogRecord = createAsyncThunk('log/addLogRecord', async (logRecord) => {
+  console.log(serverPath + '/log')
   await axios.post(serverPath + '/log', logRecord)
   return logRecord
 })
