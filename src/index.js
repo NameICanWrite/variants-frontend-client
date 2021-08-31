@@ -21,8 +21,8 @@ ReactDOM.render(
 // to log results (for example: reportWebVitals(console.log))
 // or send to an analytics endpoint. Learn more: https://bit.ly/CRA-vitals
 reportWebVitals();
-let serverPath = 'https://myfirstbackend1.herokuapp.com/'
+let serverPath
 // if (process.env.NODE_ENV === 'development') {serverPath = 'http://localhost:5000'}
-// else {serverPath}
+// else {serverPath = 'https://myfirstbackend1.herokuapp.com'}
 
 export default serverPath
