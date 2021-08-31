@@ -13,6 +13,7 @@ export const postData = async (data) => {
     testDate.setSeconds(parseInt(testDate.getSeconds() + 10))
     data.flightControl.time.from = testDate.toISOString()
     data.flightControl.time.to = testDate.toISOString()
+    console.log(serverPath + '/scheduledLetters')
     const response = await axios.post(serverPath + '/scheduledLetters', data);
     return response.data
 }
