@@ -4,8 +4,8 @@ import serverPath from "../../index";
 
 
 export const fetchData = async () => {
+    console.log(serverPath + '/inbox')
     const response = await axios.get(serverPath + '/inbox');
-    console.log(response.data)
     return response.data
 }
 
