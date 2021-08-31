@@ -1,0 +1,94 @@
+$border-test: 1px black solid
+$height: 20vh
+$choice-margin: 0.5vh
+
+
+
+.container
+    display: flex
+    border: 2px black solid 
+    height: $height
+    width: 90vw
+    margin: 10px
+    padding: 0
+    
+    &.folded
+        height:5vh
+
+    .choices-container
+        width: fit-content
+        display: inline-flex
+
+    .choice
+
+        height: 100%
+        border: $border-test
+        height: $height
+        width: fit-content
+        min-width: 150px
+        background-color: #fff1cc
+
+        .choice-name
+            border: $border-test
+            text-align: center
+            width: 100%
+            background-color: #fff
+
+        h3.variant-name
+            background-color: #d0ffe5
+            font-size: 20px
+        
+        .variant-name
+            display: block
+            border: $border-test
+            border-radius: 10px
+            text-align: center
+            margin: 5px
+            background-color: #ffd2d2
+            box-shadow: 6px 6px 8px 0 rgba(255, 255, 255, 0.3) inset, -4px -4px 6px 0 rgba(0, 0, 0, .25) inset
+
+            &:hover
+                opacity: 80%
+
+            &:active
+                opacity: 60%
+
+
+    .add-choice-button
+        display: inline-block
+        height: 100%
+        width: 50px
+        background-color: #50d846
+        background-image: url("../../../img/icons/white-plus.png")
+        background-repeat: no-repeat
+        background-position: center
+
+        &:hover
+            opacity: 90%
+
+        &:active
+            opacity: 80%
+
+    .fold-unfold
+        width:20px
+        height: 20px
+
+.add-variant-button
+    height: 30px
+    width: 30px
+    border-radius: 50%
+    background-color: #b8ff75c9
+    color: #a8a8a8
+    font-size: 10px
+    text-align: center
+
+    &.big
+        height:70px
+        width: 70px
+    
+            
+
+
+        
+
+    

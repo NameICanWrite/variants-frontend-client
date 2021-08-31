@@ -1,0 +1,301 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;400&display=swap')
+
+*
+  box-sizing: border-box
+  margin: 0
+  padding: 0
+  cursor: grabbing
+
+label
+  margin: 2px
+
+body
+  font-family: 'Poppins', sans-serif
+
+p
+  margin: auto
+
+input[type=number]
+  max-width: 40px
+  border-radius: 10px
+  text-align: center
+
+\::-webkit-scrollbar
+  width: 1em
+
+\::-webkit-scrollbar-track
+  box-shadow: inset 0 0 6px rgba(0, 0, 0, 0.7)
+
+\::-webkit-scrollbar-thumb
+  background-color: darkgrey
+  border-radius: 5px
+
+.mind-modal-button
+  width: 50%
+  display: block
+  margin: 0 auto
+  margin-top: 10px
+  background-color: #ff3232
+  color: white
+
+.main-title
+  display: block
+  width: fit-content
+  margin: 0 auto
+
+
+.to-do
+  font-size: 20px
+  color: red
+
+.main-container
+  display: flex
+  justify-content: space-evenly
+  padding-top: 30px
+
+.sub-container
+  width: 500px
+  overflow: auto
+  min-height: 300px
+  max-height: 900px
+  border: 1px solid steelblue
+  padding: 30px
+  padding-bottom: 0
+  border-radius: 5px
+
+.header
+  display: flex
+  justify-content: space-between
+  align-items: center
+  margin-bottom: 20px
+
+.btn
+  display: inline-block
+  background: #000
+  color: #fff
+  border: none
+  padding: 10px 20px
+  margin: 5px
+  border-radius: 5px
+  cursor: pointer
+  text-decoration: none
+  font-size: 15px
+  font-family: inherit
+
+  &:focus
+    outline: none
+
+  &:active
+    transform: scale(0.98)
+
+.btn-block
+  display: block
+  width: 100%
+
+.small-btn
+  display: inline-block
+  background: #000
+  color: #fff
+  border: none
+  padding: 3px 4px
+  margin: 2px
+  border-radius: 3px
+  cursor: pointer
+  text-decoration: none
+  font-size: 10px
+  font-family: inherit
+
+.task
+  background: #f4f4f4
+  margin: 5px
+  padding: 10px 20px
+  cursor: pointer
+
+.tasks-container
+  width: 450px
+  margin: 30px auto
+  overflow: auto
+  min-height: 300px
+  border: 1px solid steelblue
+  padding: 30px
+  border-radius: 5px
+  max-height: 500px
+
+.task.reminder
+  border-left: 5px solid green
+
+.tasks-filter
+  display: flex
+  background-color: rgb(69, 119, 177)
+  height: 4rem
+  border-radius: 10px
+  align-content: center
+
+  h4
+    padding-left: 40px
+    display: block
+    position: absolute
+    margin-top: -20px
+    font-size: 15px
+    background-color: rgb(212, 109, 109)
+    box-shadow: 2px 2px gray
+    border-radius: 5px
+    color: rgb(0, 0, 0)
+
+  fieldset
+    display: grid
+    grid-auto-flow: row
+    gap: 5px
+    background-color: rgba(0, 255, 55, 0.445)
+    border-radius: 7px
+    height: fit-content
+    padding: 1rem
+    margin: -5%
+    margin-left: 10%
+    min-width: 75%
+    padding-right: 0
+
+    > label
+      display: inline-flex
+      border: 1px solid
+      margin: 2px
+      border: none
+      padding: 2px
+      border-radius: 3px
+      margin-left: -30px
+      padding-left: 30px
+      width: 60%
+      background-color: rgb(1, 102, 1)
+      color: white
+
+      > label
+        width: 100%
+        text-align: right
+
+.filter-button
+  position: relative
+  appearance: none
+  background-image: url('./img/icons/filter.png')
+  background-color: rgba(255, 255, 255, 0)
+  background-size: cover
+  border: none
+  height: 20px
+  width: 25px
+  cursor: grab
+  z-index: 2
+
+.switch-container
+  position: relative
+  top: 20%
+  background-color: black
+  border-radius: 16px
+  height: 2rem
+  min-width: max-content
+  color: white
+  margin: 20px
+
+.log-record h3
+  font-size: 20px
+  margin: auto
+
+.task h3
+  align-items: center
+  display: flex
+  justify-content: space-between
+  margin: auto
+  font-size: 20px
+
+
+.log-container
+  width: 450px
+  margin: 30px auto
+  overflow: auto
+  min-height: 300px
+  border: 1px solid steelblue
+  padding: 30px
+  border-radius: 5px
+  max-height: 400px
+  display: flex
+  flex-direction: column-reverse
+  text-align: center
+
+.log-record
+  background: #a7a0ca
+  padding: 10px 20px
+  cursor: pointer
+  border-radius: 5px
+  text-align: right
+  width: fit-content
+  margin: 0 auto
+  margin-right: 0%
+  margin-bottom: 3px
+  white-space: pre-wrap
+
+.logrecord-time
+  padding: 5px
+  font-size: 12px
+
+.log-textarea
+  width: 400px
+  display: inline-block
+  border-color: silver
+  resize: none
+  font-family: 'Poppins', sans-serif
+
+\:focus-visible
+  outline: none
+
+.send-button
+  display: inline-block
+  width: 30px
+  margin-left: 5px
+
+.textareaform-container
+  display: flex
+  align-items: flex-start
+
+.header-textarea
+  width: 600px
+  display: inline-block
+  border-color: silver
+  resize: none
+  font-family: 'Poppins', sans-serif
+  font-size: 45px
+  font-weight: bold
+
+\:focus-visible
+  outline: none
+
+.header-textarea-disabled
+  width: 600px
+  display: inline-block
+  border: none
+  resize: none
+  font-family: 'Poppins', sans-serif
+  user-select: none
+  font-size: 45px
+  font-weight: bold
+
+.content-textarea
+  width: 600px
+  display: inline-block
+  border-color: silver
+  resize: none
+  font-family: 'Poppins', sans-serif
+  font-size: 15px
+  min-height: 200px
+
+.content-textarea-disabled
+  width: 600px
+  display: inline-block
+  border: none
+  resize: none
+  font-family: 'Poppins', sans-serif
+  font-size: 15px
+
+footer
+  margin-top: 30px
+  text-align: center
+  font: 1em sans-serif
+
+@import "bootstrap/dist/css/bootstrap.min.css"
