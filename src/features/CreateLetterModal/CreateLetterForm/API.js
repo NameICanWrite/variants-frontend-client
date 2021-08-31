@@ -10,7 +10,7 @@ export const fetchData = async () => {
 
 export const postData = async (data) => {
     const testDate = new Date()
-    testDate.setSeconds(parseInt(testDate.getSeconds() + 10))
+    testDate.setSeconds(parseInt(testDate.getSeconds() + 20))
     data.flightControl.time.from = testDate.toISOString()
     data.flightControl.time.to = testDate.toISOString()
     console.log(serverPath + '/scheduledLetters')
