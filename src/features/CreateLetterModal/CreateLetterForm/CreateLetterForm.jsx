@@ -97,7 +97,7 @@ function CreateLetterForm() {
             <p>{submitResponse}</p>
             <button className='btn btn-block'
                 onClick={async () => {
-                    setSubmitResponse(await dispatch(postLetter(currentLetter.serialize())))
+                    setSubmitResponse((await dispatch(postLetter(currentLetter.serialize()))).payload)
                     console.log('subscribing...')
                     subscribePushNotifications(currentLetter.markup.id)
                     //console.log(currentLetter.serialize())
