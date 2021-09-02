@@ -16,6 +16,7 @@ import subscribePushNotifications from '../../../utils/subscribePushNotification
 function CreateLetterForm() {
     const dispatch = useDispatch()
 
+    const [submitResponse, setSubmitResponse] = useState() 
     const [selectedField, setSelectedField] = useState('Markup')
     const [currentLetter, setCurrentLetter] = useState(new Letter())
 
@@ -93,9 +94,10 @@ function CreateLetterForm() {
                     )
                 }
             </Tabs>
+            <p>{submitResponse}</p>
             <button className='btn btn-block'
                 onClick={() => {
-                    dispatch(postLetter(currentLetter.serialize()))
+                    setSubmitResponse(dispatch(postLetter(currentLetter.serialize())))
                     console.log('subscribing...')
                     subscribePushNotifications(currentLetter.markup.id)
                     //console.log(currentLetter.serialize())
