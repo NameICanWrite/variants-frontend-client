@@ -98,7 +98,7 @@ function CreateLetterForm() {
             <button className='btn btn-block'
                 onClick={async () => {
                     const response = await dispatch(postLetter(currentLetter.serialize()))
-                    setSubmitResponse(response)
+                    setSubmitResponse(response.payload)
                     console.log(response)
                     // subscribePushNotifications(currentLetter.markup.id)
                     //console.log(currentLetter.serialize())
