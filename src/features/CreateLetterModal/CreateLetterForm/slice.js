@@ -23,10 +23,12 @@ export const Slice = createSlice({
   extraReducers: {
     [postLetter.fulfilled]: (state, { payload }) => {
       state.sendResponse = payload
+      console.log(payload)
       state.status = 'success'
     },
     [postLetter.rejected]: (state, { payload }) => {
       state.sendResponse = payload
+      console.log(payload)
       state.status = 'failure'
     },
   }

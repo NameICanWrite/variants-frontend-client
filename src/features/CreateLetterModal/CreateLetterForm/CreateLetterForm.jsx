@@ -94,7 +94,7 @@ function CreateLetterForm() {
                     )
                 }
             </Tabs>
-            <p>{JSON.stringify(sendResponse)}</p>
+            <p>{sendResponse}</p>
             <button className='btn btn-block'
                 onClick={async () => {
                     dispatch(postLetter(currentLetter.serialize()))
