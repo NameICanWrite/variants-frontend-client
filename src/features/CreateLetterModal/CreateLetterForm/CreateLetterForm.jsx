@@ -2,7 +2,7 @@ import './style.sass'
 
 import React from 'react'
 import { useState } from 'react'
-import { useDispatch } from 'react-redux'
+import { useDispatch, useSelector } from 'react-redux'
 
 import Tabs from 'react-bootstrap/Tabs'
 import Tab from 'react-bootstrap/Tab'
@@ -16,7 +16,7 @@ import subscribePushNotifications from '../../../utils/subscribePushNotification
 function CreateLetterForm() {
     const dispatch = useDispatch()
 
-    const [submitResponse, setSubmitResponse] = useState() 
+    const sendResponse = useSelector(state => state.awaitingLetters.sendResponse)
     const [selectedField, setSelectedField] = useState('Markup')
     const [currentLetter, setCurrentLetter] = useState(new Letter())
 
@@ -94,12 +94,10 @@ function CreateLetterForm() {
                     )
                 }
             </Tabs>
-            <p>{submitResponse}</p>
+            <p>{JSON.stringify(sendResponse)}</p>
             <button className='btn btn-block'
                 onClick={async () => {
-                    const response = await dispatch(postLetter(currentLetter.serialize()))
-                    setSubmitResponse(response.payload)
-                    console.log(response)
+                    dispatch(postLetter(currentLetter.serialize()))
                     // subscribePushNotifications(currentLetter.markup.id)
                     //console.log(currentLetter.serialize())
                 }}

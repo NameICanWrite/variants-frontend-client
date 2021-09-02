@@ -20,12 +20,16 @@ export const Slice = createSlice({
     //   state.foo = !state.foo;
     // }
   },
-  // extraReducers: {
-  //   [fetchAwaitingLetters.fulfilled]: (state, { payload }) => {
-  //     state.awaitingLettersData = payload
-  //     state.status = 'success'
-  //   },
-  // }
+  extraReducers: {
+    [postLetter.fulfilled]: (state, { payload }) => {
+      state.sendResponse = payload
+      state.status = 'success'
+    },
+    [postLetter.rejected]: (state, { payload }) => {
+      state.sendResponse = payload
+      state.status = 'failure'
+    },
+  }
 });
 
 // export const { togglefoo } = Slice.actions;
