@@ -7,8 +7,11 @@ import { Provider } from 'react-redux';
 import { store } from './app/store';
 
 let serverPath
-if (process.env.NODE_ENV === 'development') {serverPath = 'http://localhost:5000'}
-else {serverPath = 'https://myfirstbackend1.herokuapp.com'}
+if (
+  false &&
+  process.env.NODE_ENV === 'development'
+  ) {serverPath = 'http://localhost:5000'}
+else {serverPath = 'https://myfirstbackend2.herokuapp.com'}
 
 export default serverPath
 

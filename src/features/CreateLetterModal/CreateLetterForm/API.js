@@ -15,5 +15,6 @@ export const postData = async (data) => {
     // data.flightControl.time.to = testDate.toISOString()
     // console.log(serverPath + '/scheduledLetters')
     const response = await axios.post(serverPath + '/scheduledLetters', data);
+    console.log(response)
     return response.data
 }
