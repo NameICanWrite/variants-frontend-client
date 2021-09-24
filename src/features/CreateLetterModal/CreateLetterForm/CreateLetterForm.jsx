@@ -19,6 +19,7 @@ function CreateLetterForm() {
     const sendResponse = useSelector(state => state.awaitingLetters.sendResponse)
     const [selectedField, setSelectedField] = useState('Markup')
     const [currentLetter, setCurrentLetter] = useState(new Letter())
+    const [message, setMessage] = useState()
 
     const tabs = [
         {
@@ -73,10 +74,16 @@ function CreateLetterForm() {
                         setCurrentLetter(currentLetter)
                     },
                 },
-                notification: function (value) {
-                    currentLetter.flightControl.notification.isDefault = value
-                    setCurrentLetter(currentLetter)
-                },
+                notification: {
+                    isDefault: function (value) {
+                        currentLetter.flightControl.notification.isDefault = value
+                        setCurrentLetter(currentLetter)
+                    },
+                    count: function (value) {
+                        currentLetter.flightControl.notification.count = value
+                        setCurrentLetter(currentLetter)
+                    },
+                }
             },
             Content: fields.FlightControl
         }
@@ -85,23 +92,39 @@ function CreateLetterForm() {
 
     return (
         <div className='create-letter-form'>
-            <Tabs activeKey={selectedField} onSelect={(k) => setSelectedField(k)}>
-                {
-                    tabs.map((tab, index) =>
-                        <Tab title={tab.title} eventKey={tab.title}>
-                            <tab.Content handle={tab.handle} target={currentLetter} />
-                        </Tab>
-                    )
-                }
-            </Tabs>
-            
-            <button className='btn btn-block'
-                onClick={async () => {
-                    dispatch(postLetter(currentLetter.serialize()))
-                    // subscribePushNotifications(currentLetter.markup.id)
-                    //console.log(currentLetter.serialize())
-                }}
-            >Submit</button>
+            {
+                message
+                    ?
+                    <div>
+                        <div className="message">{message}</div>
+                        <button onClick={() => setMessage('')}>Ok</button>
+                    </div>
+                    :
+                    <div>
+                        <Tabs activeKey={selectedField} onSelect={(k) => setSelectedField(k)}>
+                            {
+                                tabs.map((tab, index) =>
+                                    <Tab title={tab.title} eventKey={tab.title}>
+                                        <tab.Content handle={tab.handle} target={currentLetter} />
+                                    </Tab>
+                                )
+                            }
+                        </Tabs>
+
+                        <button className='btn btn-block'
+                            onClick={async () => {
+                                await dispatch(postLetter(currentLetter.serialize())).unwrap()
+                                    .then(res => setMessage(res))
+                                    .catch((err) => setMessage(err.message))
+                                    .finally(() => setCurrentLetter(new Letter()))
+                                // subscribePushNotifications(currentLetter.markup.id)
+                                //console.log(currentLetter.serialize())
+                            }}
+                        >Submit</button>
+                    </div>
+            }
+
+
         </div>
     )
 }

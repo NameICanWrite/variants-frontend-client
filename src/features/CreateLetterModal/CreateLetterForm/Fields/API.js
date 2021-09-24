@@ -114,7 +114,8 @@ export class Letter {
                     to: 'Date after which the MEASURE is not longer valid (responses will be no longer received)'
                 }
                 this.notification = {
-                    isDefault: false
+                    isDefault: false,
+                    count: 1
                 }
             }
             static forProperty = 'flightControl'

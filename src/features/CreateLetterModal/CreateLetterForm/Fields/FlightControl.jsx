@@ -37,10 +37,19 @@ function NotificationSettings({handle}) {
                     <label className='check-label'>
                         <input type="checkbox" 
                             onChange={(e) => {
-                                handle(e.target.checked)
+                                handle.isDefault(e.target.checked)
                             }}
                         />
                         <span>default</span>
+                    </label>
+                    <label className="check-label">
+                        <input type="checkbox" 
+                            onChange={(e) => {
+                                const value = e.target.checked ? 5 : 1
+                                handle.count(value)
+                            }}
+                        />
+                        <span>send 5</span>
                     </label>
                 </div>
             </label>
