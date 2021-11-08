@@ -4,16 +4,10 @@ import './index.sass';
 import App from './App';
 import reportWebVitals from './reportWebVitals';
 import { Provider } from 'react-redux';
-import { store } from './app/store';
+import { store } from './redux/store';
 
-let serverPath
-if (
-  // false &&
-  process.env.NODE_ENV === 'development'
-  ) {serverPath = 'http://localhost:5000'}
-else {serverPath = 'https://myfirstbackend2.herokuapp.com'}
 
-export default serverPath
+
 
 ReactDOM.render(
   <React.StrictMode>
